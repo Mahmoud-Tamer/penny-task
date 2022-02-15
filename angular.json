@@ -1,0 +1,9 @@
+{
+  "version": 2,
+  "projects": {
+    "api": "apps/api",
+    "api-interfaces": "libs/api-interfaces",
+    "penny-task": "apps/penny-task",
+    "penny-task-e2e": "apps/penny-task-e2e"
+  }
+}

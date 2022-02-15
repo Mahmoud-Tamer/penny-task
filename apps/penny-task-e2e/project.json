@@ -1,0 +1,28 @@
+{
+  "root": "apps/penny-task-e2e",
+  "sourceRoot": "apps/penny-task-e2e/src",
+  "projectType": "application",
+  "targets": {
+    "e2e": {
+      "executor": "@nrwl/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/penny-task-e2e/cypress.json",
+        "devServerTarget": "penny-task:serve:development"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "penny-task:serve:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/penny-task-e2e/**/*.{js,ts}"]
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["penny-task"]
+}

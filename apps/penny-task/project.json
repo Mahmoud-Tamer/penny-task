@@ -1,0 +1,97 @@
+{
+  "projectType": "application",
+  "root": "apps/penny-task",
+  "sourceRoot": "apps/penny-task/src",
+  "prefix": "penny-task",
+  "targets": {
+    "build": {
+      "executor": "@angular-devkit/build-angular:browser",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/penny-task",
+        "index": "apps/penny-task/src/index.html",
+        "main": "apps/penny-task/src/main.ts",
+        "polyfills": "apps/penny-task/src/polyfills.ts",
+        "tsConfig": "apps/penny-task/tsconfig.app.json",
+        "inlineStyleLanguage": "scss",
+        "assets": [
+          "apps/penny-task/src/favicon.ico",
+          "apps/penny-task/src/assets"
+        ],
+        "styles": ["apps/penny-task/src/styles.scss"],
+        "scripts": []
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "2kb",
+              "maximumError": "4kb"
+            }
+          ],
+          "fileReplacements": [
+            {
+              "replace": "apps/penny-task/src/environments/environment.ts",
+              "with": "apps/penny-task/src/environments/environment.prod.ts"
+            }
+          ],
+          "outputHashing": "all"
+        },
+        "development": {
+          "buildOptimizer": false,
+          "optimization": false,
+          "vendorChunk": true,
+          "extractLicenses": false,
+          "sourceMap": true,
+          "namedChunks": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@angular-devkit/build-angular:dev-server",
+      "configurations": {
+        "production": {
+          "browserTarget": "penny-task:build:production"
+        },
+        "development": {
+          "browserTarget": "penny-task:build:development"
+        }
+      },
+      "defaultConfiguration": "development",
+      "options": {
+        "proxyConfig": "apps/penny-task/proxy.conf.json"
+      }
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "browserTarget": "penny-task:build"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "apps/penny-task/src/**/*.ts",
+          "apps/penny-task/src/**/*.html"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/penny-task"],
+      "options": {
+        "jestConfig": "apps/penny-task/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}
