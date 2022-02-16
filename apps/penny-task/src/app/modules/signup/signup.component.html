@@ -1,0 +1,84 @@
+<div class="bg">
+  <div class="container">
+    <div class="login-form">
+      <div class="logo">
+        <img src="assets/images/Penny-Logo.svg" />
+      </div>
+      <div class="title">
+        <h4>
+          <span>Sign Up</span>
+        </h4>
+        <p class="note">sign up with new account to continue</p>
+      </div>
+
+      <div class="form">
+        <form [formGroup]="signupForm">
+          <mat-form-field appearance="outline">
+            <mat-label>Username</mat-label>
+            <input
+              name="username"
+              id="username"
+              matInput
+              formControlName="username"
+            />
+            <mat-error *ngIf="valid('username', 'required')"
+              >this field is required.</mat-error
+            >
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>Enter your password</mat-label>
+            <input
+              matInput
+              formControlName="password"
+              [type]="hidePassword ? 'password' : 'text'"
+            />
+
+            <span
+              mat-icon-button
+              matSuffix
+              (click)="hidePassword = !hidePassword"
+            >
+              <mat-icon>{{
+                hidePassword ? 'visibility_off' : 'visibility'
+              }}</mat-icon>
+            </span>
+            <mat-error *ngIf="valid('password', 'required')"
+              >this field is required.</mat-error
+            >
+            <mat-error *ngIf="valid('password', 'minLength')">
+              password should be 6 chars at least.</mat-error
+            >
+          </mat-form-field>
+        </form>
+
+        <div>
+          <button
+            (click)="!this.loaderService.loading && submitSignup()"
+            [disabled]="signupForm.invalid"
+            mat-raised-button
+            class="secondary-bg login-btn"
+            style="width: 100%"
+          >
+            <span
+              *ngIf="this.loaderService.loading"
+              style="
+                display: flex;
+                justify-content: center;
+                align-items: center;
+              "
+            >
+              <mat-icon class="loading-icon">loop</mat-icon>
+            </span>
+
+            <span
+              *ngIf="!this.loaderService.loading"
+              style="text-transform: uppercase"
+            >
+              Sign Up
+            </span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,101 @@
+<mat-drawer-container class="main-container" autosize style="top: 60px">
+  <mat-drawer
+    #drawer
+    [mode]="'side'"
+    class="mat-elevation-z2 layout-sidenav"
+    style="width: 270px"
+  >
+    <div class="logo">
+      <img src="./assets/images/Penny-Logo.svg" alt="" />
+    </div>
+    <div>
+      <p class="menu-header">Contents</p>
+    </div>
+    <mat-list role="list" style="padding-bottom: 3rem !important">
+      <ng-container>
+        <a
+          class="menu-item active-router"
+          routerLink="/users"
+          routerLinkActive="router-link-active"
+        >
+          <mat-icon class="menu-icon">person</mat-icon>
+          <span class="menu-label">Users</span>
+        </a>
+      </ng-container>
+    </mat-list>
+  </mat-drawer>
+
+  <mat-drawer-content class="custom-mat-drawer-content">
+    <mat-toolbar
+      color="primary"
+      class="mat-elevation-z2 fixed-top"
+      style="padding: 0 30px"
+    >
+      <div class="toolbar-content">
+        <button
+          mat-raised-button
+          [matMenuTriggerFor]="userMenu"
+          class="profile-btn"
+        >
+          <img
+            src="
+             assets/images/default-user.svg
+            "
+            class="avatar"
+            style="height: 40px; object-fit: contain"
+          />
+        </button>
+      </div>
+
+      <mat-menu #userMenu="matMenu">
+        <button mat-menu-item (click)="logout()" style="min-width: 200px">
+          <mat-icon>login</mat-icon>
+          Logout
+        </button>
+      </mat-menu>
+
+      <div
+        style="height: 1px; position: absolute; left: 0; right: 0; bottom: 0"
+      >
+        <mat-progress-bar
+          *ngIf="loaderService.loading"
+          mode="indeterminate"
+        ></mat-progress-bar>
+      </div>
+    </mat-toolbar>
+
+    <div style="padding-bottom: 150px">
+      <div style="position: relative; display: flex; align-items: center">
+        <h2
+          style="
+            text-align: start;
+            margin-bottom: 1rem;
+            margin-top: 1rem;
+            flex: auto;
+          "
+        >
+          Users List
+        </h2>
+      </div>
+
+      <div class="table-content">
+        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+          <ng-container matColumnDef="username">
+            <th mat-header-cell *matHeaderCellDef>Username</th>
+            <td mat-cell *matCellDef="let element">{{ element.username }}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="createdAt">
+            <th mat-header-cell *matHeaderCellDef>Created At</th>
+            <td mat-cell *matCellDef="let element">
+              {{ element.createdAt | date: 'short' }}
+            </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+        </table>
+      </div>
+    </div>
+  </mat-drawer-content>
+</mat-drawer-container>

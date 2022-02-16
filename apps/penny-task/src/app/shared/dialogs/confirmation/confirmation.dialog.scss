@@ -1,0 +1,22 @@
+@import '../../../../assets/styles/variables.scss';
+
+.header {
+  text-align: center;
+  mat-icon {
+    font-size: 40pt;
+    height: auto;
+    width: auto;
+  }
+  h4 {
+    font-weight: bold;
+    color: $color-primary;
+  }
+}
+
+button {
+  padding: 0.2rem 2rem;
+}
+
+.cancel-btn {
+  color: $color-secondary;
+}

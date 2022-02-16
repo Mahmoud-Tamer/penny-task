@@ -1,0 +1,136 @@
+@import '../../../assets/styles/variables.scss';
+
+.toolbar-content {
+  text-align: end;
+  flex: 1;
+  align-items: center;
+  justify-content: end;
+  display: flex;
+}
+
+[dir='rtl'] .menu {
+  padding: 0;
+  margin-right: 10px;
+}
+
+.example-card {
+  max-width: 500px;
+  width: 400px;
+}
+
+[dir='ltr'] .menu {
+  padding: 0;
+  margin-left: 10px;
+}
+
+.menu-item {
+  text-align: center;
+  cursor: pointer;
+  display: block;
+  overflow-wrap: break-word;
+  color: #000;
+  opacity: 0.5;
+  align-items: center;
+  display: flex;
+  padding: 12px 22px 12px 20px;
+}
+
+.active-router {
+  background: #eee !important;
+  border-radius: 0 25px 25px 0;
+  margin-inline-end: 1rem;
+  opacity: 1 !important;
+}
+
+.menu-item:hover {
+  opacity: 1;
+}
+
+.menu-item:hover .menu-label {
+  font-weight: bold;
+}
+
+.menu-icon {
+  font-size: 22px;
+  margin-inline-end: 10px;
+}
+
+.logo {
+  padding: 20px 1rem 20px 1rem;
+  width: 50%;
+}
+
+.logo img {
+  width: 100%;
+  max-height: 130px;
+  object-fit: contain;
+}
+
+.menu-header {
+  text-align: start;
+  font-weight: bold !important;
+  letter-spacing: 0px;
+  color: #000;
+  opacity: 0.5;
+  margin-inline-start: 23px;
+}
+
+.menu-expansion-panel {
+  background: $color-primary !important;
+  box-shadow: none;
+  border: none;
+}
+
+.menu-expansion-panel .mat-expansion-panel-header.mat-expanded {
+  height: 48px;
+}
+
+.mat-expansion-panel-header {
+  font-size: 14px !important;
+  background: $color-primary !important;
+  padding: 0 20px;
+}
+
+.mat-expansion-panel-header-title {
+  color: #fff;
+  opacity: 0.5;
+  margin-right: 0 !important;
+}
+
+.mat-expansion-panel-header-title:hover {
+  opacity: 1 !important;
+}
+
+mat-toolbar {
+  margin-inline-start: 270px;
+}
+
+.mat-toolbar-row,
+.mat-toolbar-single-row {
+  width: auto;
+}
+
+.profile-btn {
+  marker-end: 10px;
+  border: none;
+  background: transparent;
+  box-shadow: none !important;
+  border: none !important;
+  text-align: start !important;
+  max-width: 200px;
+}
+
+.role-p {
+  color: $color-secondary;
+  opacity: 0.7;
+  font-size: 6pt;
+  margin: 0;
+  margin-top: -15px;
+  line-height: 30px;
+}
+
+.table-content {
+  background: #fff;
+  padding: 1rem 2rem;
+  border-radius: 15px;
+}

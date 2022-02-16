@@ -1,0 +1,27 @@
+<div style="padding: 2rem 3rem">
+  <div mat-dialog-content class="header">
+    <mat-icon>error_outline</mat-icon>
+    <h4>{{data.title}}</h4>
+    <p class="dialog-note">{{data.subTitle}}</p>
+  </div>
+  <div style="text-align: center; padding: 0 10px">
+    <button
+      mat-button
+      class="secondary-shade-bg cancel-btn"
+      style="margin-inline-end: 10px"
+      (click)="noClick()"
+    >
+      {{(data.cancel ? data.cancel : 'Cancel')}}
+    </button>
+    <button
+      mat-button
+      [mat-dialog-close]="data"
+      cdkFocusInitial
+      class="secondary-bg"
+      style="box-shadow: 0 0 10px #ccc; color: #fff"
+      mat-raised-button
+    >
+      {{(data.confirm ? data.confirm : 'Confirm')}}
+    </button>
+  </div>
+</div>

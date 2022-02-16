@@ -14,10 +14,7 @@
         "polyfills": "apps/penny-task/src/polyfills.ts",
         "tsConfig": "apps/penny-task/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
-        "assets": [
-          "apps/penny-task/src/favicon.ico",
-          "apps/penny-task/src/assets"
-        ],
+        "assets": ["apps/penny-task/src/assets"],
         "styles": ["apps/penny-task/src/styles.scss"],
         "scripts": []
       },

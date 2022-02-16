@@ -1,1 +1,475 @@
-/* You can add global styles to this file, and also import other style files */
+@import 'assets/styles/variables.scss';
+@import '~@angular/material/theming';
+
+@include mat-core();
+
+@font-face {
+  font-family: 'OpenSans-Light';
+  src: url('/assets/fonts/OpenSans-Light.ttf');
+}
+
+@font-face {
+  font-family: 'OpenSans-Bold';
+  src: url('/assets/fonts/OpenSans-Bold.ttf');
+  word-spacing: 0.2em;
+}
+
+@font-face {
+  font-family: 'Cairo-Regular';
+  src: url('/assets/fonts/Cairo-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'Numerics';
+  font-style: italic;
+  font-weight: 400;
+  src: local('Times New Roman');
+  unicode-range: U+30-39;
+}
+
+html,
+:not(mat-icon) {
+  font-family: 'Cairo-Regular' !important;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+.scrollable {
+  overflow: scroll;
+}
+
+.fixed-top {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+th.mat-header-cell:last-of-type,
+td.mat-cell:last-of-type,
+td.mat-footer-cell:last-of-type {
+  padding-right: 0;
+}
+
+th.mat-header-cell:first-of-type,
+td.mat-cell:first-of-type,
+td.mat-footer-cell:first-of-type {
+  padding: 0 !important;
+}
+
+th.mat-header-cell:last-of-type,
+td.mat-cell:last-of-type,
+td.mat-footer-cell:last-of-type {
+  padding-right: unset !important;
+  padding-inline-end: 24px !important;
+}
+
+.mat-paginator-range-label {
+  direction: ltr !important;
+}
+
+mat-dialog-container {
+  padding: 2rem !important;
+  overflow: hidden !important;
+}
+
+.mat-dialog-content {
+  margin: 0 !important;
+  padding: 0 !important;
+  margin-bottom: 0.7rem !important;
+}
+
+.mat-dialog-actions {
+  padding: 12px 12px !important;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #fa9a65;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #fa9a65;
+}
+
+.mat-drawer {
+  background: #fff;
+}
+
+.mat-drawer-container {
+  background: transparent;
+  top: 0 !important;
+}
+
+.mat-drawer-container .mat-drawer-content {
+  margin-right: 0px !important;
+  /* margin-right: 72px !important; */
+}
+
+.custom-mat-drawer-content {
+  height: 110% !important;
+  padding: 0 10px !important;
+}
+
+.mat-drawer-content {
+  background-color: #f4f4f4;
+  padding: 0.5rem 2rem !important;
+  scroll-behavior: smooth;
+}
+
+.custom-mat-drawer-content {
+  margin-top: 60px;
+}
+
+a {
+  color: $color-secondary;
+  text-decoration: none !important;
+  background-color: transparent !important;
+}
+
+.snack-success {
+  color: #fff !important;
+  background: #007e33 !important;
+}
+
+.snack-info {
+  color: #fff !important;
+  background: #0099cc !important;
+}
+
+.snack-warning {
+  color: #fff !important;
+  background: #ff8800 !important;
+}
+
+.snack-error {
+  color: #fff !important;
+  background: #cc0000 !important;
+}
+
+.mat-simple-snackbar-action {
+  color: #fff !important;
+}
+
+mat-list {
+  overflow-y: auto;
+  height: calc(100% - 220px);
+}
+
+tr:hover {
+  background: #f5f5f5;
+}
+
+table ul {
+  margin: 5px 0px;
+}
+
+tr th {
+  text-align: center;
+}
+
+tr td {
+  text-align: center;
+}
+
+tr td ul {
+  list-style: none;
+}
+
+mat-list-item {
+  text-align: start;
+}
+
+.mat-menu-panel {
+  max-width: 500px !important;
+}
+
+mat-paginator {
+  width: 100%;
+}
+
+.mat-input-element:disabled {
+  color: rgba(0, 0, 0, 0.8) !important;
+}
+
+.mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-should-float
+  .mat-form-field-outline-gap {
+  border-top-color: currentColor !important;
+}
+
+mat-label {
+  background: #fff;
+  padding: 10px;
+}
+
+mat-progress-bar {
+  z-index: 9;
+}
+
+.mat-progress-bar-fill::after {
+  background-color: #fa9a65;
+}
+
+.mat-form-field-label,
+.mat-form-field-label-wrapper {
+  overflow: initial !important;
+}
+
+.mat-form-field {
+  line-height: 1 !important;
+  flex: 1;
+}
+
+input.mat-input-element {
+  background: #fff;
+}
+
+.mat-form-field .mat-input-element {
+  height: 20px !important;
+}
+
+.mat-form-field-flex {
+  background: #fff;
+  border-radius: 10px;
+}
+
+.mat-button-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.mat-form-field {
+  display: block !important;
+}
+
+.primary-bg-outline {
+  border-color: $color-secondary !important;
+  color: $color-secondary;
+}
+
+.primary-cl {
+  color: $color-secondary !important;
+}
+
+.secondary-bg {
+  background: $color-secondary;
+}
+
+.secondary-shade-bg {
+  background: $color-secondary-shade;
+}
+
+@media (min-width: 1025px) {
+  .mat-drawer {
+    transform: none !important;
+    visibility: visible !important;
+  }
+}
+@media (max-width: 1025px) {
+  .mat-drawer-container .mat-drawer-content {
+    margin-top: 60px !important;
+  }
+  mat-toolbar {
+    margin-inline-start: unset !important;
+  }
+}
+
+input:-webkit-autofill {
+  display: none;
+}
+
+input:-webkit- {
+  display: none;
+}
+
+.login-btn .mat-button-wrapper {
+  justify-content: center;
+}
+
+.form .mat-form-field-appearance-outline .mat-form-field-infix {
+  padding: 10px !important;
+}
+
+.mat-list-base {
+  padding: 0 !important;
+}
+
+.mat-dialog-container {
+  position: relative;
+}
+
+.profile-btn .mat-button-wrapper {
+  overflow: hidden !important;
+}
+
+.primary-color {
+  color: $color-secondary !important;
+}
+
+.mat-paginator-range-label {
+  display: none !important;
+}
+
+.mat-paginator-page-size-label {
+  visibility: hidden;
+}
+
+.mat-menu-item .mat-icon {
+  margin-right: unset !important;
+  margin-left: unset !important;
+  margin-inline-end: 16px !important;
+}
+
+.login-form .form mat-label {
+  padding: 0 !important;
+}
+
+.login-form .mat-placeholder-required {
+  display: none !important;
+}
+
+.mat-error {
+  color: #ff5722 !important;
+  font-size: 12px !important;
+  height: 15px;
+}
+
+.mat-form-field-appearance-outline.mat-form-field-invalid.mat-form-field-invalid
+  .mat-form-field-outline-thick {
+  color: $danger !important;
+}
+
+.mat-toolbar.mat-primary {
+  background: #fff;
+}
+
+.mat-toolbar-row,
+.mat-toolbar-single-row {
+  height: 64px;
+}
+
+.mat-menu-panel {
+  background: #fff;
+}
+
+.mat-menu-item {
+  background: #0000;
+  color: #000000de;
+}
+
+.main-container {
+  position: absolute !important;
+  top: 60px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.mat-drawer-inner-container {
+  overflow: hidden !important;
+}
+
+@media (max-width: 1025px) {
+  .mat-drawer-container .mat-drawer-content {
+    margin-top: 60px !important;
+  }
+}
+
+.mat-drawer-container .mat-drawer-content {
+  margin-right: 0 !important;
+}
+
+.custom-mat-drawer-content {
+  margin-left: 270px !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 10px 0;
+  word-spacing: 0.2em;
+  font-weight: bold;
+}
+
+table {
+  width: 100%;
+}
+
+table .commands {
+  visibility: hidden;
+}
+
+@media screen and (max-width: 1366px) {
+  table .commands {
+    visibility: visible;
+  }
+}
+
+table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+table:hover .mat-row:hover {
+  background: #f5f5f5 !important;
+  -webkit-box-shadow: inset 2px 1px 1px #43618b, inset -1px -1px 3px #43618b,
+    3px 2px 10px 1px rgba(60, 64, 67, 0.3),
+    2px -2px 3px 1px rgba(60, 64, 67, 0.15);
+  box-shadow: inset 2px 1px 1px #43618b, inset -1px -1px 3px #43618b,
+    3px 2px 10px 1px rgba(60, 64, 67, 0.3),
+    2px -2px 3px 1px rgba(60, 64, 67, 0.15);
+  z-index: 99;
+}
+
+table:hover .mat-row:hover .commands {
+  visibility: visible;
+  -webkit-animation: fadein 0.42s;
+  /* Safari, Chrome and Opera > 12.1 */
+  -moz-animation: fadein 0.42s;
+  /* Firefox < 16 */
+  -ms-animation: fadein 0.42s;
+  /* Internet Explorer */
+  -o-animation: fadein 0.42s;
+  /* Opera < 12.1 */
+  animation: fadein 0.42s;
+}
+
+.mat-dialog-container {
+  box-shadow: 0 11px 15px -7px #0003, 0 24px 38px 3px #00000024,
+    0 9px 46px 8px #0000001f;
+  background: #fff;
+  color: #000000de;
+}
+
+.mat-row:hover {
+  box-shadow: inset 0 0 2px $color-secondary !important;
+}
+
+tbody,
+td,
+tfoot,
+th,
+thead,
+tr {
+  border: 0 solid;
+  border-color: inherit;
+}
+
+th {
+  text-align: center !important;
+}
